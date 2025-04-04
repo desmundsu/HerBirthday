@@ -1,6 +1,6 @@
 // Typewriter effect function
 const text = `HAPPY 20TH BIRTHDAY VIIIIII !!!
-X You officially old now heheh X
+X You officially old asf now heheh X
 I think I've said most of the stuff in the letter I wrote for you already X
 But you know what, I'm still gonna tell you how happy I am that you're around :) X
 Hope you have a good celebration with your family and enjoy the stuff I got youu X
