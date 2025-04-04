@@ -44,7 +44,8 @@ body {
 #birthday-image {
     max-width: 300px; /* Adjust size */
     height: auto;
-    display: none; /* Initially hidden */
+    display: block; /* Initially hidden */
+    text-align: center;
     margin-top: 20px; /* Adds space between text and image */
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
