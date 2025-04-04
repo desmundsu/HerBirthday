@@ -52,26 +52,17 @@ body {
 }
 
 /* Style for the clickable image */
-#image-container {
+#image-container1 {
     display: block; /* Keep the image hidden initially */
     text-align: center;
     margin-top: 20px;
 }
 
-/* Style for the large image */
-#image-container .large-image {
-    width: 80%; /* Adjust width as needed */
-    max-width: 800px; /* Max size for the large image */
-    height: auto;
-    display: block;
-    margin: 20px auto; /* Centers the image */
-    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
-}
-
-/* Style for the smaller image */
+/* Style for the large image and small image to make them the same size */
+#image-container .large-image, 
 #image-container .small-image {
-    width: 40%; /* Adjust width as needed */
-    max-width: 400px; /* Max size for the small image */
+    width: 60%; /* Set the same width for both images */
+    max-width: 600px; /* Max size for both images */
     height: auto;
     display: block;
     margin: 20px auto; /* Centers the image */
