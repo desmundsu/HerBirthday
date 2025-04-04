@@ -56,9 +56,29 @@ body {
     margin-top: 20px;
 }
 
+/* Style for the large image */
+#image-container .large-image {
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Max size for the large image */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centers the image */
+    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
+}
+
+/* Style for the smaller image */
+#image-container .small-image {
+    width: 40%; /* Adjust width as needed */
+    max-width: 400px; /* Max size for the small image */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centers the image */
+    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
+}
+
+/* Style for the images to ensure they are responsive */
 img {
     max-width: 100%;  /* Ensures image is responsive */
     height: auto;
     cursor: pointer;
-    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
 }
