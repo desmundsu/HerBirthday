@@ -5,7 +5,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Allows stacking text and image */
     height: 100vh;
     margin: 0;
 }
@@ -15,12 +14,11 @@ body {
     text-align: center;
 }
 
-/* Style for the text */
+/* Style for the text with a cursor effect */
 #typewriter-text {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-    text-align: center;
 }
 
 /* Style for the current line being typed (includes blinking cursor) */
@@ -30,7 +28,18 @@ body {
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
-    animation: blink 0.75s step-end infinite;
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Typewriter animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* Blinking cursor animation */
@@ -41,18 +50,15 @@ body {
 }
 
 /* Style for the clickable image */
-#birthday-image {
-    max-width: 300px; /* Adjust size */
-    height: auto;
-    display: block; /* Initially hidden */
+#image-container {
+    display: block; /* Keep the image hidden initially */
     text-align: center;
-    margin-top: 20px; /* Adds space between text and image */
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
+    margin-top: 20px;
 }
 
-/* Show the image when it's ready */
-#birthday-image.show {
-    display: block;
-    opacity: 1;
+img {
+    max-width: 100%;  /* Ensures image is responsive */
+    height: auto;
+    cursor: pointer;
+    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
 }
