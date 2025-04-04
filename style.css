@@ -61,8 +61,8 @@ body {
 /* Style for the large image and small image to make them the same size */
 #image-container .large-image, 
 #image-container .small-image {
-    width: 60%; /* Set the same width for both images */
-    max-width: 600px; /* Max size for both images */
+    width: 20%; /* Set the same width for both images */
+    max-width: 200px; /* Max size for both images */
     height: auto;
     display: block;
     margin: 20px auto; /* Centers the image */
