@@ -27,8 +27,8 @@ function typeWriter() {
                     document.getElementById("typewriter-text").innerHTML += '<br>'; // Add a line break
                     setTimeout(typeWriter, 500); // Wait before typing the next line
                 } else {
-                    // When all lines are typed, reveal the image
-                    document.getElementById("birthday-image").style.display = "block";
+                    // When all lines are typed, reveal the image below the last line
+                    displayImageBelowText();
                 }
             }
         }
@@ -38,9 +38,15 @@ function typeWriter() {
     }
 }
 
+// Function to display the image below the text after typing is complete
+function displayImageBelowText() {
+    const imageContainer = document.getElementById("image-container");
+    imageContainer.style.display = "block"; // Make the image container visible
+}
+
 // Make the image clickable to go to another page
 document.getElementById("birthday-image").addEventListener("click", function() {
-    window.location.href = "https://your-link.com"; // Replace with your desired link
+    window.location.href = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdkYjQxMjJxYno4czZyaDVvbTQ1Yml1NThudzB1bml4Zmk3cThjbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l9fVX1zfHYGd4rIk47/giphy.gif"; // Replace with your desired link
 });
 
 window.onload = typeWriter;  // Start the typing effect when the page loads
