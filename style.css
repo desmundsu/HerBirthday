@@ -11,67 +11,33 @@ body {
     text-align: center;
 }
 
-/* Container for the text */
-.container {
-    text-align: center;
-}
-
-/* Style for the text with a cursor effect */
-#typewriter-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Style for the current line being typed (includes blinking cursor) */
-.cursor {
-    display: inline-block;
-    border-right: 3px solid #333; /* Simulates the typing cursor */
-    padding-right: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-}
-
-/* Typewriter animation */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* Blinking cursor animation */
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-/* Style for the clickable image */
+/* Container for the images */
 #image-container1 {
-    display: block; /* Keep the image hidden initially */
+    display: block; /* Keep the image container visible */
     text-align: center;
     margin-top: 20px;
 }
 
-/* Style for the large image and small image to make them the same size */
-#image-container .large-image, 
-#image-container .small-image {
-    width: 20%; /* Set the same width for both images */
-    max-width: 200px; /* Max size for both images */
+/* Ensure both images are equal size */
+img {
+    width: 50%;  /* Adjust the width to ensure images are of equal size */
+    max-width: 500px; /* Prevent images from becoming too large */
     height: auto;
-    display: block;
-    margin: 20px auto; /* Centers the image */
+    display: inline-block;
+    margin: 10px auto; /* Space between images */
     transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
 }
 
-/* Style for the images to ensure they are responsive */
+/* If you want to ensure both images fit properly on the screen */
+#image-container1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Make sure images don't overlap and are in a row */
 img {
-    max-width: 100%;  /* Ensures image is responsive */
+    flex: 1 1 45%;  /* Flex layout ensures equal sizing and spacing */
+    max-width: 400px;
     height: auto;
-    cursor: pointer;
 }
