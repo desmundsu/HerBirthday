@@ -19,6 +19,10 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #333;
+}
+
+/* Style for the current line being typed (includes blinking cursor) */
+.cursor {
     display: inline-block;
     border-right: 3px solid #333; /* Simulates the typing cursor */
     padding-right: 5px;
@@ -43,4 +47,19 @@ body {
     50% {
         border-color: transparent;
     }
+}
+
+/* Style for the clickable image */
+img {
+    max-width: 100%;  /* Ensures image is responsive */
+    height: auto;
+    transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
+}
+
+/* Style for the text container */
+#typewriter-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
 }
