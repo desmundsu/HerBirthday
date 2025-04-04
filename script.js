@@ -6,28 +6,35 @@ But, I'm still so happy that you're around :) X
 Hope you have a good celebration X with your family and enjoy the X stuff I got youuu X
 Click the cat for a surprise 👀`;
 
-let index = 0;
-let currentLine = 0; // Keeps track of which line we are on
+let currentLine = 0;
 const lines = text.split('X'); // Split the text by "X" to create separate lines
 
 function typeWriter() {
     if (currentLine < lines.length) {
-        let line = lines[currentLine].trim(); // Get the current line and remove excess whitespace
-        let charIndex = 0; // Index to track the character being typed
+        let line = lines[currentLine].trim(); // Get the current line
+        let charIndex = 0; 
+
+        // Create a new span for the current line and add the "cursor" class
+        let newLineSpan = document.createElement("span");
+        newLineSpan.classList.add("cursor");  // Adds blinking cursor effect
+        document.getElementById("typewriter-text").appendChild(newLineSpan);
 
         function typeNextCharacter() {
             if (charIndex < line.length) {
-                document.getElementById("typewriter-text").innerHTML += line.charAt(charIndex);
+                newLineSpan.innerHTML += line.charAt(charIndex);
                 charIndex++;
                 setTimeout(typeNextCharacter, 80); // Adjust the speed here
             } else {
-                // Once the current line is typed, move to the next line
+                // Remove the cursor class after typing finishes
+                newLineSpan.classList.remove("cursor");
+
+                // Move to the next line after a delay
                 currentLine++;
                 if (currentLine < lines.length) {
-                    document.getElementById("typewriter-text").innerHTML += '<br>'; // Add a line break
-                    setTimeout(typeWriter, 500); // Wait before typing the next line
+                    document.getElementById("typewriter-text").appendChild(document.createElement("br"));
+                    setTimeout(typeWriter, 500); // Delay before typing the next line
                 } else {
-                    // When all lines are typed, reveal the image below the last line
+                    // Show the image after all lines are typed
                     displayImageBelowText();
                 }
             }
@@ -41,7 +48,7 @@ function typeWriter() {
 // Function to display the image below the text after typing is complete
 function displayImageBelowText() {
     const imageContainer = document.getElementById("image-container");
-    imageContainer.style.display = "block"; // Make the image container visible
+    imageContainer.style.display = "block"; // Make the image visible
 }
 
 // Make the image clickable to go to another page
