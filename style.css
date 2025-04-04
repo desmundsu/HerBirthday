@@ -13,31 +13,17 @@ body {
 
 /* Container for the images */
 #image-container1 {
-    display: block; /* Keep the image container visible */
-    text-align: center;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center images horizontally */
+    gap: 20px; /* Space between images */
     margin-top: 20px;
 }
 
 /* Ensure both images are equal size */
 img {
-    width: 50%;  /* Adjust the width to ensure images are of equal size */
-    max-width: 500px; /* Prevent images from becoming too large */
+    width: 45%;  /* Adjust width to ensure images are of equal size */
+    max-width: 400px; /* Prevent images from becoming too large */
     height: auto;
     display: inline-block;
-    margin: 10px auto; /* Space between images */
     transition: opacity 0.3s ease;  /* Smooth transition when image shows up */
-}
-
-/* If you want to ensure both images fit properly on the screen */
-#image-container1 {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Make sure images don't overlap and are in a row */
-img {
-    flex: 1 1 45%;  /* Flex layout ensures equal sizing and spacing */
-    max-width: 400px;
-    height: auto;
 }
