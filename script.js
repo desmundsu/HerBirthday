@@ -13,12 +13,25 @@ const lines = text.split('X'); // Split the text by "X" to create separate lines
 function typeWriter() {
     if (currentLine < lines.length) {
         let line = lines[currentLine].trim(); // Get the current line and remove excess whitespace
-        document.getElementById("typewriter-text").innerHTML += line;  // Add line to the element
-        currentLine++; // Move to the next line
-        if (currentLine < lines.length) {
-            document.getElementById("typewriter-text").innerHTML += '<br>'; // Add a line break between lines
+        let charIndex = 0; // Index to track the character being typed
+
+        function typeNextCharacter() {
+            if (charIndex < line.length) {
+                document.getElementById("typewriter-text").innerHTML += line.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeNextCharacter, 100); // Adjust the speed here
+            } else {
+                // Once the current line is typed, move to the next line
+                currentLine++;
+                if (currentLine < lines.length) {
+                    document.getElementById("typewriter-text").innerHTML += '<br>'; // Add a line break
+                    setTimeout(typeWriter, 500); // Wait before typing the next line
+                }
+            }
         }
-        setTimeout(typeWriter, 150);  // Adjust the speed here
+
+        // Start typing the current line
+        typeNextCharacter();
     }
 }
 
